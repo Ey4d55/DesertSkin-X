@@ -246,5 +246,10 @@ Overall complexity is **medium**. Budget roughly 2–4 focused developer-days fo
 - `npm --prefix website run build` passed. `node website/scripts/verify.mjs`
   passed all **9 calculation/integrity verification groups**. Source workbook
   bytes and evidence boundaries remain unchanged.
-- Browser preview published through existing GitHub Pages; then replace the
-  main interface with the tested build and retain all source changes in GitHub.
+- Published the rebuilt main interface in GitHub commit
+  `81fa203260cabfc35adfa44789e5d9c821e7eb33`; Pages deployment succeeded.
+  A fresh browser session verified the main address, new hashed assets, visible
+  3D, keyboard rotation, C05 metrics and T0005 alert explanation, then reset to
+  all deployments. Captured the final interface for the handoff.
+- The GPU path remains unverified in this browser, which used software 3D.
+  Physical-phone and presentation-laptop rehearsal remain separate checks.
