@@ -105,3 +105,21 @@ checked as strings; Windows PowerShell execution remains a presentation-laptop c
   until that connection is available in this conversation.
 - Prepare a GitHub Pages package without publishing elsewhere. No repository
   destination or GitHub deployment was selected or changed in this task.
+
+## Field lab rebuild — November 8, 2026
+
+- Follow the supplied video’s spatial interaction pattern: a complete planted
+  site, orbit/zoom controls, labeled components and compact surrounding metrics.
+  Replace the previous isolated membrane panel and long marketing layout.
+- Use procedural Three.js geometry rather than a remote asset dependency. A
+  full software 3D renderer keeps the scene interactive when WebGL is blocked.
+- Keep all 3D behavior illustrative. Component links open existing materials,
+  readings and alerts; scene controls never mutate the workbook snapshot.
+- Browser QA is required for this correction. With the local preview relay
+  unavailable, publish to a separate path on the existing Pages repository,
+  verify there, and then replace the main interface. Preserve the existing
+  source/data and repository visibility.
+- Cache files by content hash. A cached preview initially hid the depth and
+  readability fixes; versioned asset names prevent that failure.
+- The owner explicitly dropped GetLayers. No GetLayers dependency or design
+  attribution is claimed.

@@ -1,70 +1,76 @@
-# DesertSkin-X — browser edition
+# DesertSkin-X / Field lab — build 02
 
-A self-contained HTML/CSS/JavaScript dashboard for GitHub Pages. No Python
-server, package installation, build step, CDN, API key or remote font is required
-at runtime. The original Streamlit demo remains available in the parent project.
+The browser interface has been rebuilt around an interactive 3D concept site,
+following the owner's supplied reference video: an orbitable planted diorama,
+component labels, a compact inspector and operational data controls.
 
-## Open locally
+## Run or publish
 
-Open `dist/index.html` in a modern browser. Keep the files in `dist` together.
-The snapshot is loaded through a local script asset, so opening the extracted
-site directly also works without a web server or network connection.
+Open `dist/index.html` directly in a modern browser, or serve the `dist` folder.
+Scripts and styles use content-hashed filenames so corrected builds do not reuse
+stale browser assets. All runtime scripts are bundled locally. No CDN, account, API key or Python
+server is required. Keep the files together.
 
-## Publish with GitHub Pages
+For GitHub Pages, use the existing repository deployment. All URLs are relative
+and work under a repository subpath. Upload the contents of `dist` to the chosen
+Pages publishing directory if deploying elsewhere.
 
-1. Create or choose a GitHub repository.
-2. Upload the **contents of `dist`**, including `index.html`, to its root.
-   Upload the extracted files, not the ZIP itself. Keep the `.nojekyll` file.
-3. Open the repository's **Settings → Pages**.
-4. Choose **Deploy from a branch**, branch **main**, folder **/ (root)**, then Save.
-5. Open the deployment URL GitHub supplies after publishing finishes.
+## 3D behavior
 
-If using an existing Python repository, copy these website files into a `docs`
-folder and choose `/docs` as the publishing folder instead. Do not replace the
-Python files. All asset URLs are relative, so repository subpaths are supported.
+The original procedural scene includes a membrane-covered greenhouse, planted
+beds, a service building with solar panels, a collection tank, a pond and a powered
+monitoring point. It uses Three.js 0.187.0, bundled into `site.js` with its MIT
+license. No model or texture is loaded from another website.
 
-Only the static website assets need publication. The original workbook and
-Python project are not required on the website. The synthetic snapshot embedded
-in `data.js` is readable by website visitors.
+- Drag or use arrow keys to orbit; scroll, pinch or use +/− to zoom.
+- Home or Reset returns to the initial camera.
+- Orbit toggles automatic camera rotation; reduced motion disables it.
+- Layers lifts and rejoins the membrane roof assembly.
+- Hover, focus or click the component labels. Clicking a component or label
+  updates the inspector, which links to its related data view.
+- If WebGL2 is unavailable, the same meshes are rendered with a local software
+  triangle rasterizer and per-pixel depth buffer. Rotation, zoom, layer separation,
+  raycast selection and labels continue to work. This is an interactive 3D scene,
+  not a static image fallback.
+- A WebGL context loss switches to compatibility rendering.
 
-## Interaction
+All scene geometry is conceptual and not to scale. It does not predict material
+response, depict a validated pilot site, or control a device.
 
-- Drag the 3D membrane or focus it and press the arrow keys; Home resets rotation.
-- Separate/join the two layers and select illustrative humidity. This geometry
-  is conceptual and does not predict material response or alter the data.
-- Hover a chart reading, focus it with the keyboard, or tap it to inspect details.
-  Press Escape to dismiss the tooltip. The same readings appear in the table.
-- Select a deployment to update metrics, charts, readings and alerts. Reset returns
-  to the complete dataset. C05 Storage has 21 readings, 16.39% average savings,
-  4.30 L modeled water saved and five critical events.
-- Inspect T0005 in Alerts: 38.59 °C exceeds the 38 °C threshold despite risk zero.
-- Compare S0–S6 at matched RH. S7 is a separate open-aperture reference.
-- Motion is reduced when the operating system requests reduced motion. WebGL
-  failure falls back to a conceptual two-layer study; the dashboard still works.
+## Data contract
 
-## Refresh and verify
+The existing validated workbook snapshot remains the source for all eight
+scenarios, 168 readings and 24 material rows. Original source precision and naive
+workbook timestamps are retained. The selected deployment scopes metrics,
+readings and alerts; material comparisons use independent matched RH conditions.
+S7 remains a separate open-aperture reference. The scene is explicitly independent
+of the selected dataset scope. No what-if controls alter saved data.
 
-From the parent project, using its installed Python environment:
+## Modify and verify
+
+Requires Node.js for authoring only:
 
 ```text
-.venv/bin/python website/scripts/export_data.py
-node website/scripts/verify.mjs
+npm ci
+npm run build
+npm run verify
 ```
 
-On Windows, use `.venv\Scripts\python.exe` for the Python command. The exporter
-uses the existing validated workbook loader and preserves source precision and
-the supplied timestamps without assigning a timezone. Refreshing the snapshot
-is an authoring operation, never a visitor upload or formula evaluation.
+`src/world.js` builds the model, camera controls, picking and compatibility
+renderer. `src/ui.js` handles dataset views and the component inspector.
+`src/entry.js` composes both. `core.js` contains the calculation contract.
 
-## Verification boundary
+To refresh the dataset from the original Python project, run the existing
+`website/scripts/export_data.py` with that project's installed Python environment.
 
-Calculation checks reconcile all-data and filtered results, every severity,
-threshold equality, material arithmetic, empty states, local asset references
-and dataset provenance. JavaScript syntax is checked separately. Browser visual
-and interaction rehearsal was blocked by an unavailable preview relay in the
-creation environment. WebGL rendering, actual mobile layout and browser keyboard
-interaction therefore still need a browser rehearsal before judging.
+## Verification
 
-GetLayers MCP was requested but was not exposed to this conversation. The design
-is an original implementation and does not claim to use GetLayers references.
-No GitHub repository was uploaded or published by this task.
+`node scripts/verify.mjs` reconciles global/C05 summaries, unequal baselines and
+zeros, every source severity, threshold boundaries, material arithmetic, empty
+selections, local assets, source fingerprint and timestamp semantics.
+
+The live GitHub Pages preview is used for browser QA because the managed local
+preview relay was unavailable. The verification record is in the project's
+`ROADMAP.md`. GPU rendering and compatibility rendering are separate paths;
+checks establish only the path actually observed. Real hardware/OS variations
+still need the normal event-laptop rehearsal.

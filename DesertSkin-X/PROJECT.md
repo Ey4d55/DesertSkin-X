@@ -55,5 +55,16 @@ browser edition using the same validated synthetic workbook snapshot. It include
 the overview, filtered telemetry, alert inspection and matched-RH material library.
 The 3D bilayer study is explicitly conceptual, independent of measured or modeled
 dashboard results. The original local Streamlit application remains available.
-GitHub publication and browser visual rehearsal are not completed. Requested
-GetLayers MCP access was not exposed in this conversation.
+The first browser edition was rejected by the owner for its visual design and
+nonworking 3D. It is superseded by build 02 below. GetLayers was abandoned at
+the owner’s instruction.
+
+## Field lab rebuild — November 8, 2026
+
+The owner supplied `refrence.mp4` and requested a complete redesign. Build 02
+uses a procedural, orbitable greenhouse diorama as the main workspace, with
+component inspection and compact data views. It supports real geometry on WebGL2
+and a software 3D rasterizer when GPU access is unavailable. Both use the same
+meshes and camera; the fallback is not a screenshot. The source workbook,
+calculation contract and distinction between concept geometry and evidence remain
+unchanged. Changes are published to the existing GitHub Pages repository.

@@ -89,3 +89,24 @@ WebGL failure leaves the dashboard usable with a conceptual fallback. Charts
 retain per-scenario grouping, explicit workbook-time labels and accessible data
 tables. Hover details also respond to focus and tapping. Browser rehearsal is
 unverified because the managed preview relay was unavailable.
+
+## Build 02 renderer and browser interface
+
+`website/src/world.js` constructs the greenhouse, service building, solar panels,
+water loop, plants, monitoring point and component anchors with Three.js 0.187.0.
+No remote model, font or texture is requested. `src/ui.js` renders the scoped
+dataset and component inspector. Esbuild 0.25.12 bundles the engine and source
+into a classic local script; direct offline opening remains supported.
+
+WebGL2 uses Three.js lighting and shadows. When unavailable, Canvas 2D receives
+the same transformed triangles from a software rasterizer with per-pixel depth
+testing and alpha composition. CPU raycasting, camera orbit/zoom, layer
+separation and projected labels work on either renderer. Context loss switches
+to compatibility rendering. Motion respects reduced motion; scenes pause when
+the data panel or browser tab is hidden. This is concept geometry, not a
+calibrated simulation or a live installation.
+
+`scripts/build.mjs` produces content-hashed script/style names to avoid stale
+asset caches after deployment. Source templates live under `src/`; only `dist`
+is required at runtime. The existing GitHub repository is the source/deployment
+target. Build 02 replaces the old shader and editorial landing-page UI.

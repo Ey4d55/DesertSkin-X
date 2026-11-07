@@ -1,0 +1,15 @@
+import {build} from 'esbuild';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const result=await build({entryPoints:[path.join(root,'src/entry.js')],bundle:true,minify:true,format:'iife',target:'es2020',legalComments:'eof',write:false});
+const js=result.outputFiles[0].contents,css=await fs.readFile(path.join(root,'src/style.css'));
+const hash=b=>createHash('sha256').update(b).digest('hex').slice(0,10);
+const script=`site-${hash(js)}.js`,style=`style-${hash(css)}.css`;
+const template=await fs.readFile(path.join(root,'src/index.html'),'utf8');
+for(const file of await fs.readdir(path.join(root,'dist')))if(/^(site(?:-[a-f0-9]+)?\.js|style(?:-[a-f0-9]+)?\.css|app\.js|scene\.js)$/.test(file))await fs.unlink(path.join(root,'dist',file));
+await fs.writeFile(path.join(root,'dist',script),js);await fs.writeFile(path.join(root,'dist',style),css);
+await fs.writeFile(path.join(root,'dist/index.html'),template.replace('{{STYLE}}',style).replace('{{SCRIPT}}',script));
+console.log(JSON.stringify({script,style,bytes:js.length}));

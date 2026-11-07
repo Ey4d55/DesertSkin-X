@@ -220,3 +220,31 @@ Overall complexity is **medium**. Budget roughly 2–4 focused developer-days fo
   remain unverified; no alternative browser route was substituted.
 - GetLayers MCP discovery found no exposed matching provider. Applying its
   references is pending connection. No GitHub upload/publication is claimed.
+
+## Field lab rebuild — November 8, 2026
+
+- Reviewed the attached 23.6-second reference video at eight sampled moments.
+  Replaced the interface with a sidebar workspace, interactive diorama, component
+  inspector, compact KPIs and focused reading/material/alert views.
+- Added original procedural 3D greenhouse, membrane roof, service building,
+  solar array, tank, pond, planted beds, trees and monitoring point. Added camera
+  drag/keyboard orbit, wheel/pinch/button zoom, reset, optional orbit, layer lift,
+  raycast picking, projected component labels and dataset links.
+- A software triangle rasterizer with per-pixel depth testing renders the same
+  geometry when WebGL2 is unavailable. The observed browser used this path.
+  GPU rendering and physical touch-device behavior are not claimed as tested.
+- Browser checks on the actual Pages preview verified visible 3D geometry,
+  mouse orbit, keyboard rotation, zoom, layer separation, component inspection,
+  all-data reset, C05’s 21 readings / 16.39% / 4.30 L, T0005’s 38.59 °C trigger,
+  the empty warning state, matched-RH materials and separate S7.
+- At 250% browser zoom (545 CSS-pixel viewport), compact navigation and C05
+  filtering worked without document horizontal overflow. This is a narrow-screen
+  layout check, not a physical-phone test. Keyboard chart tooltips and Escape
+  dismissal also passed.
+- Fixed software depth sorting after visual review exposed occluded ground
+  details. Added content-hashed bundles/styles after a cached asset hid fixes.
+- `npm --prefix website run build` passed. `node website/scripts/verify.mjs`
+  passed all **9 calculation/integrity verification groups**. Source workbook
+  bytes and evidence boundaries remain unchanged.
+- Browser preview published through existing GitHub Pages; then replace the
+  main interface with the tested build and retain all source changes in GitHub.
