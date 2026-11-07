@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img">
+  <title>DesertSkin-X conceptual bilayer membrane</title>
+  <desc>A porous aerogel support above a responsive hydrogel, shown as a schematic rather than a measured micrograph.</desc>
+  <defs>
+    <linearGradient id="sand" x2="1" y2="1"><stop stop-color="#EBE5D4"/><stop offset="1" stop-color="#F7F4EC"/></linearGradient>
+    <linearGradient id="gel" x2="1" y2="1"><stop stop-color="#8DCAC5"/><stop offset="1" stop-color="#3D8F88"/></linearGradient>
+    <pattern id="pores" width="32" height="23" patternUnits="userSpaceOnUse"><ellipse cx="14" cy="11" rx="8" ry="5" fill="#61846B" opacity=".38"/><ellipse cx="14" cy="10" rx="6" ry="3" fill="#284D3A" opacity=".3"/></pattern>
+  </defs>
+  <ellipse cx="238" cy="241" rx="158" ry="22" fill="#254D3C" opacity=".08"/>
+  <circle cx="244" cy="143" r="125" fill="url(#sand)"/>
+  <path d="M64 172 246 104 420 161 238 237Z" fill="url(#gel)"/>
+  <path d="M64 172 238 237 238 253 64 188Z" fill="#377D78"/>
+  <path d="M238 237 420 161 420 178 238 253Z" fill="#529D96"/>
+  <path d="M64 134 246 66 420 123 238 199Z" fill="#D1DEC6" stroke="#ACC3A1"/>
+  <path d="M64 134 246 66 420 123 238 199Z" fill="url(#pores)"/>
+  <path d="M64 134 238 199 238 218 64 151Z" fill="#A5BE9B"/>
+  <path d="M238 199 420 123 420 143 238 218Z" fill="#7E9F7D"/>
+  <path d="M191 145 196 161 187 161Z M282 111 287 127 278 127Z" fill="#F6F5ED" opacity=".7"/>
+  <path d="M128 44C128 44 115 61 115 68a13 13 0 0 0 26 0c0-7-13-24-13-24Z" fill="#4B9D92"/>
+  <path d="M351 34C351 34 341 47 341 53a10 10 0 0 0 20 0c0-6-10-19-10-19Z" fill="#BDA56B"/>
+  <text x="28" y="278" font-family="sans-serif" font-size="11" letter-spacing="2" fill="#55715F">AEROGEL SUPPORT / RESPONSIVE HYDROGEL</text>
+  <text x="28" y="295" font-family="sans-serif" font-size="9" letter-spacing="1" fill="#7D8C7D">CONCEPTUAL SCHEMATIC · NOT TO SCALE</text>
+</svg>
