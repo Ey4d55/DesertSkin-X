@@ -110,3 +110,22 @@ calibrated simulation or a live installation.
 asset caches after deployment. Source templates live under `src/`; only `dist`
 is required at runtime. The existing GitHub repository is the source/deployment
 target. Build 02 replaces the old shader and editorial landing-page UI.
+
+## Build 03: original membrane specimen
+
+`src/world.js` now builds only the membrane: a thin, undulating hydrogel sheet
+with a cutaway variant, an irregular curved-strut aerogel network, schematic
+GO/silica inclusions, interface bridges and illustrative water particles.
+The proposed compositions come from the attached English project profile.
+Geometry, sizes, hydration particles and deformation are not microscopy or a
+calibrated constitutive model. No transport direction is inferred from RH alone.
+
+`src/software.js` separates the compatibility triangle rasterizer from the model.
+Both renderers use the same geometry and camera. Studio lighting is used on the
+WebGL path; software provides depth-tested, shaded translucent geometry.
+Camera views include Overview, Surface and Cross-section; presentation controls
+include Assembled, Cutaway and Exploded. RH controls are illustrative and never
+mutate metrics or material inputs. Camera framing compensates for exploded
+separation. The inspector renders hydrogel, aerogel, interface and hydration
+explanations instead of site components. `src/style.css` supplies a new dark
+material-study palette, with warm hydrogel and cool support accents.

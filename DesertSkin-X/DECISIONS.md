@@ -123,3 +123,17 @@ checked as strings; Windows PowerShell execution remains a presentation-laptop c
   readability fixes; versioned asset names prevent that failure.
 - The owner explicitly dropped GetLayers. No GetLayers dependency or design
   attribution is claimed.
+
+## Membrane reference correction — November 8, 2026
+
+- The owner rejected the garden subject. The new videos are inspiration for
+  depth, smooth exploration and detailed structures only. Build an original
+  membrane specimen and do not reproduce a cell, squid, garden or reference UI.
+- Ground composition in the English profile: PVA/alginate/CMC/CNC hydrogel,
+  investigated PSBMA additions, CNF/GO/silica aerogel. Do not invent measured
+  pore size, layer thickness, swelling calibration or permeability direction.
+- Use irregular schematic porosity and a translucent responsive layer. Exploded
+  separation is a viewing aid, not in-service delamination. Water particles are
+  explanatory marks, not a molecular simulation or a quantified flux.
+- Keep operational data and matched-RH material comparisons independent of the
+  visual RH controls. Preserve the existing workbook snapshot and formulas.

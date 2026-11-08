@@ -68,3 +68,13 @@ and a software 3D rasterizer when GPU access is unavailable. Both use the same
 meshes and camera; the fallback is not a screenshot. The source workbook,
 calculation contract and distinction between concept geometry and evidence remain
 unchanged. Changes are published to the existing GitHub Pages repository.
+
+## Membrane explorer — November 8, 2026
+
+The owner clarified that all supplied videos are references for visual quality,
+depth and interaction, not subjects to reproduce. The desired subject is the
+DesertSkin-X membrane. Build 03 replaces the garden with an original hydrogel /
+aerogel specimen, using the English project profile for proposed composition.
+Its assembled, cutaway and exploded views, camera presets, component inspector
+and illustrative hydration controls are separate from the fixed demo dataset.
+The biological structures, brands and exact layouts from the videos are not used.

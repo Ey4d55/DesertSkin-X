@@ -253,3 +253,27 @@ Overall complexity is **medium**. Budget roughly 2–4 focused developer-days fo
   all deployments. Captured the final interface for the handoff.
 - The GPU path remains unverified in this browser, which used software 3D.
   Physical-phone and presentation-laptop rehearsal remain separate checks.
+
+## Membrane explorer correction — November 8, 2026
+
+- Reviewed all three newly attached reference videos through multi-timepoint
+  contact sheets. Read the English project profile’s composition/mechanism.
+  Replaced the garden with original, project-specific membrane geometry.
+- Added assembled/cutaway/exploded presentations; overview/surface/cross-section
+  camera presets; layer/interaction inspection; illustrative 30/50/80% RH states.
+  Kept drag/keyboard rotation, zoom, reset, hover feedback and reduced motion.
+- Visual review replaced an overly regular initial lattice with an irregular
+  curved-strut porous support and a softer translucent hydrogel surface.
+- Browser preview verified visible membrane geometry, layer separation,
+  one-active-button presentation states, camera presets, component inspection,
+  80% illustrative RH in the inspector and unchanged 72.64 L global KPI.
+  C05 still showed 21 readings / 16.39% / 4.30 L, and T0005 still explained
+  38.59 °C > 38 °C. Separate S7 reference rendering also passed.
+- At 545 CSS pixels, model controls, navigation and C05 filtering worked with
+  document width 539 pixels: no page horizontal overflow. This is not a
+  physical-phone test. Browser rendering used software 3D; GPU-specific
+  appearance and physical touch-device behavior remain unverified.
+- Build and all 9 calculation / asset / provenance verification groups passed.
+  Original workbook bytes, thresholds, precision and timestamps are unchanged.
+- Publish the checked specimen build to the existing Pages site, replacing
+  build 02 while preserving the Python demo and unrelated repository files.
