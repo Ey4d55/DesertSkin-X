@@ -218,6 +218,7 @@ const ATTRS = ['aria-label', 'title', 'placeholder'];
 const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'CODE']);
 const originals = new WeakMap();          // text node -> original English
 let lang = 'en';
+const originalDir = document.documentElement.getAttribute('dir') || 'ltr';
 let busy = false;
 
 function doText(node) {
@@ -272,6 +273,7 @@ const style = document.createElement('style');
 style.textContent = '@font-face{font-family:"DSX Cairo";src:url("./fonts/Cairo.woff2") format("woff2");font-weight:200 1000;font-style:normal;font-display:swap}'
   + 'html[lang="ar"] body,html[lang="ar"] body *:not(.i18n-toggle){font-family:"DSX Cairo","Segoe UI",Tahoma,Arial,sans-serif!important;font-style:normal!important;letter-spacing:normal!important}'
   + 'html[lang="ar"] body :is(p,h1,h2,h3,h4,h5,h6,li,dt,dd,td,th,caption,figcaption,label,small,strong,span,a,button,option,div,legend,summary,em,b){unicode-bidi:plaintext}'
+  + 'html[dir="rtl"] svg,html[dir="rtl"] canvas,html[dir="rtl"] .wordmark{direction:ltr}'
   + '.i18n-toggle{font:inherit;font-size:.78rem;letter-spacing:.04em;cursor:pointer}';
 document.head.appendChild(style);
 
@@ -288,6 +290,7 @@ else document.body.prepend(btn);
 function setLang(next) {
   lang = next;
   document.documentElement.lang = next === 'ar' ? 'ar' : 'en';
+  document.documentElement.dir = next === 'ar' ? 'rtl' : originalDir;
   btn.textContent = next === 'ar' ? 'EN' : 'عربي';
   if (next === 'ar') { busy = true; try { walk(document.body); document.title = translate(document.title) || document.title; } finally { busy = false; } }
   else { busy = true; try { restore(); } finally { busy = false; } }
